@@ -1,8 +1,8 @@
 const Border = {
-  ACTIVE: "border-2",
-  PASSIVE: "border-1",
+  ACTIVE: "border-3",
+  PASSIVE: "border-2",
   NONE: "",
-  THICKEST: "border-3",
+  THICKEST: "border-4",
 };
 
 export default Border;
