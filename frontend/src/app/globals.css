@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+@theme {
+  --color-app-light: #deecff;
+  --color-app-regular: #4091ff;
+  --color-app-dark: #003174;
+  --color-app-white: #ffffff;
+}
