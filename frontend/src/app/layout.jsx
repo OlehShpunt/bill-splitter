@@ -7,7 +7,7 @@ const inter = Inter({
 });
 
 const radioCanada = Radio_Canada({
-  weight: ["600", "400"],
+  weight: ["400", "300", "500", "600", "700"],
   subsets: ["latin"],
 });
 
