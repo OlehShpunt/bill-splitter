@@ -21,3 +21,15 @@ export default function PersonSelector({
     </span>
   );
 }
+
+export function AddPersonSelector() {
+  return (
+    <PersonSelector
+      backgroundColor={AppColor.background.WHITE}
+      borderColor={AppColor.border.LIGHT + " border-dashed"}
+      textColor={AppColor.text.LIGHT + " text-5xl font-light"}
+    >
+      <span className="-translate-y-0.5">+</span>
+    </PersonSelector>
+  );
+}
