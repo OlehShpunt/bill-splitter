@@ -1,6 +1,5 @@
 import AppColor from "@/utils/AppColor";
 import Border from "@/utils/Border";
-
 export default function Header({ heading, description, children }) {
   return (
     <>
@@ -13,13 +12,21 @@ export default function Header({ heading, description, children }) {
           Border.PASSIVE
         }`}
       >
-        <div className="m-auto max-w-100 w-297/316 h-fit mt-5">
-          <p className={`w-fit px-4 text-xl ${AppColor.text.DARK}`}>
-            {heading}
-          </p>
-          <p className={`w-fit px-4 ${AppColor.text.REGULAR}`}>{description}</p>
+        <div className="m-auto max-w-100 w-297/316 h-fit">
+          {heading && (
+            <p className={`w-fit px-4 text-xl mt-5 ${AppColor.text.DARK}`}>
+              {heading}
+            </p>
+          )}
+          {description && (
+            <p className={`w-fit px-4 ${AppColor.text.REGULAR}`}>
+              {description}
+            </p>
+          )}
+          <div className="m-auto overflow-x-auto whitespace-nowrap scrollbar-hide max-w-[380px]">
+            {children}
+          </div>
         </div>
-        {children}
       </div>
       <div className="h-23"></div>
     </>

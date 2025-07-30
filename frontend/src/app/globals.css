@@ -6,3 +6,11 @@
   --color-app-dark: #003174;
   --color-app-white: #ffffff;
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
