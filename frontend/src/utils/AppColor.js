@@ -1,3 +1,6 @@
+/**
+ * The custom colors are specified under @theme in globals.css.
+ */
 const AppColor = {
   background: {
     WHITE: "bg-app-white",
