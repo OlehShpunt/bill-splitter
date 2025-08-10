@@ -1,4 +1,5 @@
 import { Inter, Radio_Canada } from "next/font/google";
+import ContextWrapper from "../components/layouts/ContextWrapper.jsx";
 import "./globals.css";
 
 const inter = Inter({
@@ -21,7 +22,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head />
       <body className={`font-semibold ${radioCanada.className}`}>
-        {children}
+        <ContextWrapper>{children}</ContextWrapper>
       </body>
     </html>
   );
