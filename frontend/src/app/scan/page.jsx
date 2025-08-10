@@ -4,25 +4,27 @@ import Button from "@/components/shared/Button";
 import AppColor from "@/utils/AppColor";
 import Border from "@/utils/Border";
 import { useState } from "react";
+import { ImageContext } from "@/contexts/image-context";
+import { useContext } from "react";
+import { useRouter } from "next/navigation";
 
 export default function ScanPage() {
-  const [selectedFile, setSelectedFile] = useState(null);
+  const router = useRouter();
+  const [isSelected, setIsSelected] = useState(false);
+  const { image, setImage } = useContext(ImageContext);
 
+  // File from input
   const onFileChange = (event) => {
-    setSelectedFile(event.target.files[0]);
+    if (event.target.files[0]) {
+      setImage(event.target.files[0]);
+      setIsSelected(true);
+    }
   };
 
-  const onFileUpload = () => {};
-
-  const fileData = () => {
-    if (selectedFile) {
-      return (
-        <div
-          className={`text-center m-auto w-fit mt-8 text-xl max-w-100 ${AppColor.text.DARK}`}
-        >
-          File Name: {selectedFile.name}
-        </div>
-      );
+  // Go to scan confirmation
+  const onButtonClick = () => {
+    if (isSelected && image) {
+      router.push("/scan/confirm");
     }
   };
 
@@ -53,8 +55,18 @@ export default function ScanPage() {
           />
         </div>
       </div>
-      {fileData()}
-      <div onClick={onFileUpload}>
+
+      <div
+        className={
+          isSelected
+            ? `text-center m-auto w-fit mt-8 text-xl max-w-100 ${AppColor.text.DARK}`
+            : "hidden"
+        }
+      >
+        File Name: {image.name}
+      </div>
+
+      <div onClick={onButtonClick}>
         <Button text="Upload"></Button>
       </div>
     </>
