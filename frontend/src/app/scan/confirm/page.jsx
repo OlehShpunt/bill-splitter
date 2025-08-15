@@ -4,8 +4,10 @@ import Button from "@/components/shared/Button";
 import Header from "@/components/shared/Header";
 import ListOfItems from "@/components/shared/ListOfItems";
 import { ImageContext } from "@/contexts/image-context";
+import { ItemsContext } from "@/contexts/items-context";
 import { useContext, useState, useEffect } from "react";
 import extractItemsService from "@/services/extract-items.service";
+import { useRouter } from "next/navigation";
 
 export default function ScanConfirmPage() {
   const router = useRouter();
