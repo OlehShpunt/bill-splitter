@@ -28,27 +28,6 @@ export default function ScanConfirmPage() {
     }
   }, [image]); // NOTE: The useEffect hook will run when the component mounts and whenever the `image` changes.
 
-  // try {
-  //   // TODO: use Context to save the image url in ScanPage and dynamically pass it below
-  //   const imageUrl = encodeURIComponent("https://i.redd.it/43vg6ll5hz2b1.jpg");
-
-  //   // Send the image to the backend and get the extracted items
-  //   const response = await fetch(
-  //     `http://127.0.0.1:8000/?image_url=${imageUrl}`,
-  //     {
-  //       cache: "default",
-  //       body: image,
-  //     }
-  //   );
-
-  // // Convert the response into a JSON object
-  // const dataJsonString = await response.json();
-  // const dataJson = JSON.parse(dataJsonString);
-  // itemListData = dataJson;
-  // } catch (error) {
-  //   console.error("Error fetching data:", error);
-  //   return;
-  // }
 
   return (
     <>
