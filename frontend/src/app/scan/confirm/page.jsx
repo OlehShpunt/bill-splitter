@@ -2,7 +2,7 @@
 
 import Button from "@/components/shared/Button";
 import Header from "@/components/shared/Header";
-import ItemList from "@/components/shared/ItemList";
+import ListOfItems from "@/components/shared/ListOfItems";
 import { ImageContext } from "@/contexts/image-context";
 import { useContext, useState, useEffect } from "react";
 import extractItemsService from "@/services/extract-items.service";
@@ -56,8 +56,8 @@ export default function ScanConfirmPage() {
         heading="Confirm item list"
         description="Click an item to correct price or name"
       ></Header>
-      <ItemList items={itemListData}></ItemList>
-      <Button text="Confirm"></Button>
+      <ListOfItems items={items}></ListOfItems>
+        <Button text="Confirm"></Button>
     </>
   );
 }

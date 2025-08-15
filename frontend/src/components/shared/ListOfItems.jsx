@@ -1,10 +1,10 @@
-import ListItem from "./ListItem";
+import Item from "./Item";
 
-export default function ItemList({ items = [] }) {
+export default function ListOfItems({ items = [] }) {
   let i = 0;
   const listItems = items.map((item) => {
     return (
-      <ListItem
+      <Item
         key={item.key ? item.key : i++}
         name={item.name}
         value={item.value}
@@ -12,7 +12,7 @@ export default function ItemList({ items = [] }) {
         borderColor={item.borderColor}
         borderWidth={item.borderWidth}
         textColor={item.textColor}
-      ></ListItem>
+      ></Item>
     );
   });
   return listItems;

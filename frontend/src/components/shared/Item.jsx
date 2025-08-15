@@ -1,7 +1,7 @@
 import AppColor from "../../utils/AppColor";
 import Border from "../../utils/Border";
 
-export default function ListItem({
+export default function Item({
   name = "Not specified",
   value = "0.00",
   backgroundColor = AppColor.background.WHITE,
