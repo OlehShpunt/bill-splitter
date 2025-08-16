@@ -11,6 +11,7 @@ export default function ListOfItems({ items = [], currentPerson = null }) {
       return;
     }
 
+    setSelections((previousSelections) => {
       const currentSelectedItemsArray = previousSelections[currentPerson] || [];
       const index = currentSelectedItemsArray.indexOf(itemKey);
       if (index > -1) {
@@ -51,7 +52,7 @@ export default function ListOfItems({ items = [], currentPerson = null }) {
     ) {
       itemState = ItemState.DEACTIVATED;
     }
-    // Otherwise, set it to normal
+    // If the item is not selected by anyone, set it to normal
     else {
       itemState = ItemState.NORMAL;
     }
