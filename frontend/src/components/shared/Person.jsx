@@ -14,7 +14,12 @@ export default function Person({
       onClick={onClick}
     >
       <span
-        className={`inline-flex items-center justify-center mx-1 my-2 rounded-full text-3xl h-18 w-18 ${state}`}
+        className={`${state} inline-flex items-center justify-center mx-1 my-2 rounded-full ${
+          state !== PersonState.CONTAINERIZED.ACTIVE &&
+          state !== PersonState.CONTAINERIZED.INACTIVE
+            ? "text-3xl h-18 w-18"
+            : ""
+        }`}
       >
         {name.slice(0, 1).toUpperCase()}
         {children}

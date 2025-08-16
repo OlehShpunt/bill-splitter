@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useContext } from "react";
 import Item from "./Item";
 import ItemState from "@/utils/ItemState";
+import { SelectionsContext } from "@/contexts/bill-context";
 
 export default function ListOfItems({ items = [], currentPerson = null }) {
-  const [selections, setSelections] = useState({});
+  // selections is { "person1": [*itemKeys*], "person2": [*itemKeys*] ... }
+  const { selections, setSelections } = useContext(SelectionsContext);
 
   // Changes item state when clicked
   const onItemClicked = (itemKey) => {
@@ -57,6 +59,14 @@ export default function ListOfItems({ items = [], currentPerson = null }) {
       itemState = ItemState.NORMAL;
     }
 
+    // Find people who selected the specified item
+    // selections is { "person1": [*itemKeys*], "person2": [*itemKeys*] ... },
+    // so it needs to be converted into [["person1", []], ["person2", []] ... ]
+    // to be filtered
+    const people = Object.entries(selections)
+      .filter(([person, itemKeys]) => itemKeys.includes(item.key))
+      .map(([person, itemKeys]) => person);
+
     return (
       <Item
         key={item.key}
@@ -64,6 +74,7 @@ export default function ListOfItems({ items = [], currentPerson = null }) {
         value={item.value}
         onClick={() => onItemClicked(item.key)}
         state={itemState}
+        people={people}
       ></Item>
     );
   });
