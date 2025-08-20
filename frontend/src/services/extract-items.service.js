@@ -12,8 +12,12 @@ async function extractItemsService(image) {
   });
   // Convert the response into a JSON object
   const dataJsonString = await response.json();
-  const dataJson = JSON.parse(dataJsonString);
-  return dataJson;
+  const dataJson = JSON.parse(dataJsonString); // Format is array of objects {name: "itemName", value: "itemPrice"}
+
+  return dataJson.map((itemJson) => {
+    itemJson.key = Math.floor(Math.random() * (1000000 - 1000 + 1)) + 1000;
+    return itemJson;
+  });
 }
 
 export default extractItemsService;
