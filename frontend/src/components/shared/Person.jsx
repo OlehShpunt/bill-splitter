@@ -19,6 +19,13 @@ export default function Person({
       if (name === "+") {
         return;
       }
+      // If it is containerized, disable "delete person" functionality
+      if (
+        state === PersonState.CONTAINERIZED.ACTIVE ||
+        state === PersonState.CONTAINERIZED.INACTIVE
+      ) {
+        return;
+      }
       setPeople((prevPeople) => prevPeople.filter((p) => p !== name));
     }, 800);
   }
