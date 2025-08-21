@@ -2,7 +2,7 @@ async function extractItemsService(image) {
   const formData = new FormData();
   formData.append("file", image);
 
-  const response = await fetch("http://127.0.0.1:8000", {
+  const response = await fetch(process.env.NEXT_PUBLIC_BACKEND_URL, {
     method: "POST",
     body: formData,
     contentType: "multipart/form-data",

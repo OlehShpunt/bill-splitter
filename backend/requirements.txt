@@ -129,3 +129,4 @@ WSME==0.12.1
 yappi==1.6.10
 yaql==3.1.0
 zipp==3.23.0
+gunicorn==20.1.0
