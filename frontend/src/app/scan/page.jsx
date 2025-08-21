@@ -66,9 +66,7 @@ export default function ScanPage() {
         File Name: {image.name}
       </div>
 
-      <div onClick={onButtonClick}>
-        <Button text="Upload"></Button>
-      </div>
+      <Button text="Upload" onClick={onButtonClick}></Button>
     </>
   );
 }

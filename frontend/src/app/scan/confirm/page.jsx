@@ -70,9 +70,7 @@ export default function ScanConfirmPage() {
           An error occurred. Please try again.
         </div>
       </div>
-      <div onClick={onButtonClick}>
-        <Button text="Confirm"></Button>
-      </div>
+      <Button text="Confirm" onClick={onButtonClick}></Button>
     </>
   );
 }

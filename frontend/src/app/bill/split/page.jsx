@@ -36,9 +36,7 @@ export default function BillSplitPage() {
             items={items}
             currentPerson={currentPerson}
           ></ListOfItems>
-          <div onClick={onButtonClick}>
-            <Button text="Confirm"></Button>
-          </div>
+          <Button text="Confirm" onClick={onButtonClick}></Button>
         </PeopleContext.Provider>
       </CurrentPersonContext.Provider>
     </>
