@@ -8,17 +8,15 @@ export default function Item({
   state = ItemState.NORMAL,
   people = [], // ["person1", "person2", "person3" ...]
   onClick = () => {},
+  children,
 }) {
   const initializePeopleComponents = () => {
-    console.log("initializing, passed people are: ", people);
     return people.map((person) => {
       let personState;
       if (state === ItemState.ACTIVATED) {
         personState = PersonState.CONTAINERIZED.ACTIVE;
-        console.log("Person component should be active for ", person);
       } else {
         personState = PersonState.CONTAINERIZED.INACTIVE;
-        console.log("Person component should be inactive for ", person);
       }
       return <Person name={person} state={personState} key={person}></Person>;
     });
@@ -26,17 +24,18 @@ export default function Item({
 
   return (
     <div
-      className={`m-auto my-2 max-w-100 w-297/316 h-18 rounded-[10] ${state}`}
+      className={`m-auto max-w-100 w-297/316 min-h-16 rounded-[10] box-border ${state}`}
       onClick={onClick}
     >
-      <div className="flex justify-between items-center px-4 h-full">
-        <span id="name">{name.toString()}</span>
-        <div className="inline-block w-fit">
-          <span className="mr-2">{initializePeopleComponents()}</span>
-          <div className="inline-block w-max-18 text-right" id="value">
-            {value.toString()}
+      <div className="flex flex-col">
+        <div className="flex items-center justify-between min-h-14">
+          <span className="truncate pl-4">{name}</span>
+          <div className="flex items-center gap-2">
+            {initializePeopleComponents?.()}
+            <span className="text-right pr-4">{Number(value).toFixed(2)}</span>
           </div>
         </div>
+        {children}
       </div>
     </div>
   );

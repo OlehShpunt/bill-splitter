@@ -28,6 +28,15 @@ const ItemState = {
     AppColor.border.LIGHT +
     " " +
     Border.NONE,
+
+  PERSON_AS_ITEM:
+    AppColor.text.DARK +
+    " " +
+    AppColor.background.LIGHT +
+    " " +
+    AppColor.border.LIGHT +
+    " " +
+    Border.NONE,
 };
 
 export default ItemState;

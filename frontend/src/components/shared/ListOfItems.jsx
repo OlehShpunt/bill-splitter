@@ -3,7 +3,11 @@ import Item from "./Item";
 import ItemState from "@/utils/ItemState";
 import { SelectionsContext } from "@/contexts/bill-context";
 
-export default function ListOfItems({ items = [], currentPerson = null }) {
+export default function ListOfItems({
+  items = [],
+  currentPerson = null,
+  staticItemsState,
+}) {
   // selections is { "person1": [*itemKeys*], "person2": [*itemKeys*] ... }
   const { selections, setSelections } = useContext(SelectionsContext);
 
@@ -44,8 +48,13 @@ export default function ListOfItems({ items = [], currentPerson = null }) {
 
   const listItems = items.map((item) => {
     let itemState;
+
+    // If the state needs to be specified statically (with no dynamic UI styling)
+    if (staticItemsState) {
+      itemState = staticItemsState;
+    }
     // If the item is selected by the current person, set it to activated
-    if (selections[currentPerson]?.includes(item.key)) {
+    else if (selections[currentPerson]?.includes(item.key)) {
       itemState = ItemState.ACTIVATED;
     }
     // If the item is selected by any other person, set it to deactivated
@@ -73,11 +82,17 @@ export default function ListOfItems({ items = [], currentPerson = null }) {
         name={item.name}
         value={item.value}
         onClick={() => onItemClicked(item.key)}
+        children={item.children}
         state={itemState}
         people={people}
       ></Item>
     );
   });
 
-  return listItems;
+  return (
+    <div className="flex flex-col gap-2">
+      {listItems}
+      <div></div>
+    </div>
+  );
 }
