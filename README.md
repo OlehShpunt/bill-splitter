@@ -1,7 +1,7 @@
 <br />
 <div align="center">
   <a href="bill-splitter-liart.vercel.app/scan">
-    <img src="images/icon.png" alt="Bill Splitter Icon" width="80" height="80">
+    <img src="icon.png" alt="Bill Splitter Icon" width="80" height="80">
   </a>
 
   <h3 align="center">Receipt Splitting Web Application</h3>
@@ -89,7 +89,7 @@ npm run dev
 ```
 
 
-[product-screenshots]: images/product-screenshots.png
+[product-screenshots]: product-screenshots.png
 [product-url]: bill-splitter-liart.vercel.app/scan
 
 [Next-badge]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
