@@ -1,6 +1,6 @@
 <br />
 <div align="center">
-  <a href="bill-splitter-liart.vercel.app/scan">
+  <a href="https://bill-splitter-liart.vercel.app/scan">
     <img src="icon.png" alt="Bill Splitter Icon" width="80" height="80">
   </a>
 
@@ -9,7 +9,7 @@
   <p align="center">
     Upload a receipt, extract items with Mistral AI, assign items to people, and see a final summary of who owes how much.
     <br />
-    <a href="bill-splitter-liart.vercel.app/scan"><strong>Try it out »</strong></a>
+    <a href="https://bill-splitter-liart.vercel.app/scan"><strong>Try it out »</strong></a>
     <br />
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
@@ -64,7 +64,7 @@ The project frontend is built with components reused accross the whole applicati
 
 
 ## Issues
-* First receipt item extraction takes about a minute due to a free Render (https://render.com/docs/free#spinning-down-on-idle) tier being used for backend hosting. If the backend server doesn't receive any request for 15 minutes, it shuts down. Hence, the very first time the backend is used after inactivity, the request processing takes much more time because of the server start. <br/>In case the server is up (you have uploaded a receipt once already within the last 15 minutes), it only takes from 5 to 15 seconds to extract items from the uploaded receipt. <br/>This issue can be resolved by upgrading the backend hosting service tier.
+* First receipt item extraction takes about a minute due to [the free Render tier's server spinning down on idle](https://render.com/docs/free#spinning-down-on-idle). If the backend server doesn't receive any request for 15 minutes, it shuts down. Hence, the very first time the backend is used after inactivity, the request processing takes much more time because of the server start. <br/>In case the server is up (you have uploaded a receipt once already within the last 15 minutes), it only takes from 5 to 15 seconds to extract items from the uploaded receipt. <br/>This issue can be resolved by upgrading the backend hosting service tier.
 
 * It may be hard for the user to figure out how to add people. I need to add some hint to show that the user need to press on the circle with the plus sign. The "easy-to-learn" usability goal needs to be improved on the "Add People" page to make the interface more intuitive.
 
@@ -90,7 +90,7 @@ npm run dev
 
 
 [product-screenshots]: product-screenshots.png
-[product-url]: bill-splitter-liart.vercel.app/scan
+[product-url]: https://bill-splitter-liart.vercel.app/scan/
 
 [Next-badge]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
